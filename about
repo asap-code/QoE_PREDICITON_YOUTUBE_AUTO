@@ -1,0 +1,8 @@
+The youtube_auto represents the adaptive video streaming algorithm used by YouTube based on the DASH algorithm. 
+The DASH principal consist of dividing video into segments (2-10s), every segments is available in different encoding bitrate or different 
+video resolutions, based on the network QoS metrics (e.g., throughput and loss rate) and the terminal display capacity the 
+client request segments so as to minimise the video interruptions and limi the video reoslution switches for best visual experience.
+We use machine learning to capture the link between the netwrok QoS and the QoE class, our model is built offline 
+using controlled experiments. We stream thousands pf videos under network emulated condiitons, latter we record the application 
+level QoS such as number of interruption and joint time, then use the ITU-P1203 to derive the corresponding theorticl MoS(mean opinion score). 
+We train a decion tree with the data and deploy the model online to do real time prediciton.
